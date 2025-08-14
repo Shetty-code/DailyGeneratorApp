@@ -1,0 +1,128 @@
+:root{
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #0b1a2b;
+  --muted: #6b7685;
+  --accent: #4b9ce2;
+  --btn-hover: #3a86d6;
+  --shadow: 0 6px 18px rgba(11,26,43,0.08);
+}
+
+[data-theme="dark"] {
+  --bg: #0b1220;
+  --card: #071227;
+  --text: #e6eef8;
+  --muted: #9fb4d6;
+  --accent: #6fb0ff;
+  --btn-hover: #83bfff;
+  --shadow: 0 6px 18px rgba(2,6,23,0.7);
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg);
+  color: var(--text);
+  transition: background .25s ease, color .25s ease;
+}
+body{
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.header {
+  width: 100%;
+  max-width: 720px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 1.4rem;
+  letter-spacing: 0.2px;
+  margin-top: 3rem;
+}
+
+.theme-toggle .toggle {
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:0.9rem;
+}
+.theme-toggle input { transform: scale(1.05); }
+
+.main {
+  width: 100%;
+  max-width: 720px;
+  padding: 16px;
+  margin-top: 3.5rem;
+}
+
+.quote-card{
+  background: var(--card);
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  transition: transform .18s ease;
+}
+
+.quote-card:hover{ transform: translateY(-4px); }
+
+.quote {
+  font-size: 1.25rem;
+  line-height:1.5;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.author{
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 18px;
+  text-align: right;
+}
+
+.controls {
+  display:flex;
+  gap:12px;
+  justify-content:flex-end;
+}
+
+.btn {
+  background: var(--accent);
+  border: none;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor:pointer;
+  font-weight:600;
+  box-shadow: 0 4px 12px rgba(75,156,226,0.18);
+}
+
+.btn:hover { transform: translateY(-2px); background: var(--btn-hover); }
+
+.btn.outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(11,26,43,0.08);
+}
+
+.footer{
+  margin-top: 28px;
+  color: var(--muted);
+  font-size:1.5rem;
+  margin-top: 1rem;
+}
+
+/* responsive */
+@media (max-width:600px){
+  .quote { font-size:1rem; }
+  .quote-card { padding: 18px; border-radius:10px; }
+  .controls { justify-content: center; flex-direction: column; gap:8px; }
+  .controls .btn { width:100%; }
+}
